@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PierresTreats
+namespace PierresTreats.Models
 {
     public class Treat
     {
@@ -10,7 +10,7 @@ namespace PierresTreats
         public Treat()
         {
             this.Flavors = new HashSet<FlavorTreat>();
-        }
-        
+        }       
     }
+
 }
