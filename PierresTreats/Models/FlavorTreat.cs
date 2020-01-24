@@ -8,4 +8,5 @@ namespace PierresTreats
         public Treat Treat { get; set; }
         public Flavor Flavor { get; set; }
     }
+    
 }
