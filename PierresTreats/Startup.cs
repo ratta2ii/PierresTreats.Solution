@@ -50,7 +50,7 @@ namespace PierresTreats
       app.UseStaticFiles();
 
       app.UseDeveloperExceptionPage();
-      //new code
+     
       app.UseAuthentication();
 
       app.UseMvc(routes =>
@@ -64,6 +64,7 @@ namespace PierresTreats
       {
         await context.Response.WriteAsync("Something went wrong!");
       });
-    }
+    }   
+    
   }
 }
