@@ -1,0 +1,42 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor
+
+<h2>Flavor Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.FlavorName): @Html.DisplayFor(model => model.FlavorName)</h3>
+
+@if(@Model.Treats.Count == 0)
+{
+  <p>This flavor does not belong to any Treats.</p>
+}
+else
+{
+  <h4>Treats that have this Flavor:</h4>
+  <ul>
+  @foreach(var join in Model.Treats)
+  {
+    <li>@join.Treat.TreatName</li>
+  }
+  </ul>
+}
+
+@* Does this unordered list replace something else? *@
+
+  <ul>
+  @foreach(var join in Model.Treats)
+  {
+    <li>@join.Treat.TreatName</li>
+    @using (Html.BeginForm("DeleteTreat", "Flavors"))
+    {
+      @Html.Hidden("joinId", @join.FlavorTreatId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>
+<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</p>
