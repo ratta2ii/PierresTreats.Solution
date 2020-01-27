@@ -2,19 +2,19 @@
   Layout = "_Layout";
 }
 
-@model PierresTreats.Models.Flavor
+@model PierresTreats.Models.Flavor;
 
 <h2>Flavor Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.FlavorName): @Html.DisplayFor(model => model.FlavorName)</h3>
+<h3>Flavor Name: @Html.DisplayFor(model => model.FlavorName)</h3>
 
 @if(@Model.Treats.Count == 0)
 {
-  <p>This flavor does not belong to any Treats.</p>
+  <p>This Flavor has no listed treats.</p>
 }
 else
 {
-  <h4>Treats that have this Flavor:</h4>
+  <h4>This flavor goes with the following treats:</h4>
   <ul>
   @foreach(var join in Model.Treats)
   {
@@ -23,20 +23,13 @@ else
   </ul>
 }
 
-@* Does this unordered list replace something else? *@
 
-  <ul>
-  @foreach(var join in Model.Treats)
-  {
-    <li>@join.Treat.TreatName</li>
-    @using (Html.BeginForm("DeleteTreat", "Flavors"))
-    {
-      @Html.Hidden("joinId", @join.FlavorTreatId)
-      <input type="submit" value="Delete"/>
-    }
-  }
-  </ul>
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Add a Treat to this flavor", "AddTreat", new { id = Model.FlavorId })</p>
+<p>@Html.ActionLink("Back to Flavors", "Index")</p>
 <p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>
-<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</p>
+<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</p> 
+
+@using (Html.BeginForm("LogOff", "Account"))
+{
+  <input type="submit" class="btn btn-default" value="Log out" />
+}

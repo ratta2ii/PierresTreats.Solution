@@ -2,16 +2,17 @@
   Layout = "_Layout";
 }
 
-<h1>Welcom to the Homepage! Congratulations</h1>
+<h1>Pierre's Sweet & Savory Treats</h1>
 
-<h3>Views/Home/Index.cshtml</h3>
+
 
 <p>@Html.ActionLink("See all Flavors", "Index", "Flavors")</p>
 <p>@Html.ActionLink("See all Treats", "Index", "Treats")</p>
+<p>@Html.ActionLink("Log in", "Login", "Account")</p>
 <p>@Html.ActionLink("Create an account", "Index", "Account")</p>
 
 
 @using (Html.BeginForm("LogOff", "Account"))
 {
-    <input type="submit" class="btn btn-default" value="Log out" />
+  <input type="submit" class="btn btn-default" value="Log out" />
 }
