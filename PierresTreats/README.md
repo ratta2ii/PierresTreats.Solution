@@ -4,7 +4,7 @@
 
 ### **Description**
 
-_This is a server side application built in C# using ASP.Net Core MVC. This project focuses on migrations using the Entity Framework (Core), and also demonstates a working knowledge of both Authentication and Authorization. A user should be able to view both products, Flavors and Treats, without having to sign in. If you a user wants access to the CRUD funcitonality that will delete, add, or edit products, the user must create an account and then sign in. The application then will provide options to delete, edit and add both new flavors and treats, as well as store the username and password within the database that was created. Lastly, the application also demonstrates a many to many relationship, where multiple treats may belong to one flavor, and vice versa._
+_This is a server side application built in C# using ASP.NET Core Mvc. This project focuses on migrations using the Entity Framework (Core), demonstrating a working knowledge of both Authentication and Authorization using methods available through the framework. A user should be able to view both products, Flavors and Treats, without having to sign in. If you a user wants access to the CRUD funcitonality that will delete, add, or edit products, the user must create an account and then sign in. The application then will provide options to delete, edit and add both new flavors and treats, as well as store the username and password within the database that was created. Lastly, the application also demonstrates a many to many relationship, where multiple treats may belong to one flavor, and vice versa._
 
 #
 ###  **Setup/Installation Requirements**
