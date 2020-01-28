@@ -11,7 +11,7 @@ _This is a server side application built in C# using ASP.Net Core MVC. This proj
 
 1. Open https://ratta2ii.github.io/PierresTreats.Solution
 2. Clone repository to local machine (git clone <repoName>)
-3. Navagate to the project directory (HairSalon)
+3. Navagate to the project directory (PierresTreats)
 4. $ dotnet restore
 5. $ dotnet build 
 6. dotnet ef migrations add Initial (Create database and migration)
