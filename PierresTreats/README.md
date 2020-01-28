@@ -1,38 +1,35 @@
+# **Pierrs's Sweet and Savoroy Treats**
 
-DB Statement
-CREATE DATABASE `pierres_treats_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+###### By Trevor Mackin 01/24/2020  
 
-Flavors Statement
-CREATE TABLE `Flavors` (
-  `FlavorId` int(11) NOT NULL AUTO_INCREMENT,
-  `FlavorName` longtext,
-  `UserId` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`FlavorId`),
-  KEY `IX_Flavors_UserId` (`UserId`),
-  CONSTRAINT `FK_Flavors_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+### **Description**
 
+_This is a server side application built in C# using ASP.Net Core MVC. This project focuses on migrations using the Entity Framework (Core), and also demonstates a working knowledge of both Authentication and Authorization. A user should be able to view both products, Flavors and Treats, without having to sign in. If you a user wants access to the CRUD funcitonality that will delete, add, or edit products, the user must create an account and then sign in. The application then will provide options to delete, edit and add both new flavors and treats, as well as store the username and password within the database that was created. Lastly, the application also demonstrates a many to many relationship, where multiple treats may belong to one flavor, and vice versa._
 
-Treats Statement
-CREATE TABLE `Treats` (
-  `TreatId` int(11) NOT NULL AUTO_INCREMENT,
-  `TreatName` longtext,
-  `UserId` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`TreatId`),
-  KEY `IX_Treats_UserId` (`UserId`),
-  CONSTRAINT `FK_Treats_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+#
+###  **Setup/Installation Requirements**
 
+1. Open https://ratta2ii.github.io/PierresTreats.Solution
+2. Clone repository to local machine (git clone <repoName>)
+3. Navagate to the project directory (HairSalon)
+4. $ dotnet restore
+5. $ dotnet build 
+6. dotnet ef migrations add Initial (Create database and migration)
+7. dotnet ef database update
+8. $ dotnet run (to run the application in the browser)
+9. Go ahead and expore application
 
-FlavorTreatList Statement
-CREATE TABLE `FlavorTreatList` (
-  `FlavorTreatId` int(11) NOT NULL AUTO_INCREMENT,
-  `TreatId` int(11) NOT NULL,
-  `FlavorId` int(11) NOT NULL,
-  PRIMARY KEY (`FlavorTreatId`),
-  KEY `IX_FlavorTreatList_FlavorId` (`FlavorId`),
-  KEY `IX_FlavorTreatList_TreatId` (`TreatId`),
-  CONSTRAINT `FK_FlavorTreatList_Flavors_FlavorId` FOREIGN KEY (`FlavorId`) REFERENCES `flavors` (`FlavorId`) ON DELETE CASCADE,
-  CONSTRAINT `FK_FlavorTreatList_Treats_TreatId` FOREIGN KEY (`TreatId`) REFERENCES `treats` (`TreatId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+#
+* C#
+* netcoreapp2.2
+* ASP.NET Core Mvc
+* Razor
+* Entity Framework (Core)
+* Html
+* Css
+* Bootstrap
+
+### **License**
+
+Copyright (c) 2019 **Trevor Mackin**
 
