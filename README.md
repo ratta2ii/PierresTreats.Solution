@@ -1,4 +1,4 @@
-# **Pierrs's Sweet and Savoroy Treats**
+## **PIERRES SWEET & SAVORY TREATS**
 
 ###### By Trevor Mackin 01/24/2020  
 
@@ -31,6 +31,7 @@ _This is a server side MVC application built in C# using the ASP.NET Core framew
 * CSS
 * Bootstrap
 
+#
 ### **License**
 
 MIT License
